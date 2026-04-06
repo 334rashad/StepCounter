@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     # Local apps
     "apps.users",
+    "apps.challenges",
 ]
 
 MIDDLEWARE = [
