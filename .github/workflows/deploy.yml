@@ -20,21 +20,3 @@ jobs:
         run: railway up --service backend
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-```
-
-> This triggers **only on pushes to `main`** — your feature branches deploy nothing until merged.
-
----
-
-### Step 5 — Set up Railway
-
-1. Go to **https://railway.app** and sign up with GitHub
-2. Click **New Project → Deploy from GitHub repo** → select your repo
-3. Railway will detect the `railway.toml` and start building
-4. Click **New** → **Database** → **PostgreSQL** — Railway auto-sets `DATABASE_URL`
-5. Go to your backend service → **Variables** → add these:
-```
-SECRET_KEY=your-strong-secret-key-here
-DEBUG=False
-ALLOWED_HOSTS=your-app.railway.app
-CORS_ALLOWED_ORIGINS=https://your-frontend-url.com
