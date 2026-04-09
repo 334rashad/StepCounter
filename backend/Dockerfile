@@ -14,4 +14,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
-RUN SECRET_KEY=placeholder python manage.py collectstatic --noinput
+RUN SECRET_KEY=placeholder DATABASE_URL=sqlite:///db.sqlite3 python manage.py collectstatic --noinput
