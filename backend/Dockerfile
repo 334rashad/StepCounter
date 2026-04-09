@@ -15,3 +15,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . .
 
 RUN SECRET_KEY=placeholder DATABASE_URL=sqlite:///db.sqlite3 python manage.py collectstatic --noinput
+
+CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]
